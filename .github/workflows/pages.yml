@@ -20,10 +20,31 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Inject site refinements
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          targets = {
+              "index.html": "site-enhancements.css",
+              "resume.html": "resume-print.css",
+          }
+
+          for html_name, css_name in targets.items():
+              path = Path(html_name)
+              text = path.read_text(encoding="utf-8")
+              marker = f'<link rel="stylesheet" href="{css_name}">'
+              if marker not in text:
+                  text = text.replace("</head>", marker + "\n</head>")
+                  path.write_text(text, encoding="utf-8")
+          PY
+
       - name: Configure Pages
         uses: actions/configure-pages@v5
         with:
           enablement: true
+
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v3
         with:
