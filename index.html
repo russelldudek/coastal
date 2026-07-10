@@ -1,1 +1,31 @@
-PLACEHOLDER
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Russell Dudek | Coastal VP of AI Candidate Vision</title>
+<style>
+html,body{height:100%;margin:0}body{display:grid;place-items:center;background:#F8F3EA;color:#062C49;font-family:Arial,Helvetica,sans-serif}.loader{text-align:center;max-width:520px;padding:28px}.flag{width:54px;height:54px;margin:0 auto 18px;position:relative;overflow:hidden;border:2px solid #062C49;background:#fff}.flag:before{content:"";position:absolute;inset:0 50% 0 0;background:#13B8C7}.flag:after{content:"";position:absolute;left:50%;top:0;border-top:27px solid #FF6B5A;border-bottom:27px solid transparent;border-left:27px solid transparent}.loader strong{font-size:1.4rem}.loader p{color:#607680}.bar{height:5px;background:#D7E7E8;overflow:hidden}.bar span{display:block;width:40%;height:100%;background:linear-gradient(90deg,#13B8C7,#FF6B5A);animation:load 1.2s ease-in-out infinite alternate}@keyframes load{to{transform:translateX(150%)}}
+</style>
+</head>
+<body>
+<div class="loader" id="loader"><div class="flag"></div><strong>Coastal AI Practice Candidate Vision</strong><p>Loading the signal…</p><div class="bar"><span></span></div></div>
+<noscript>This candidate vision requires JavaScript to load.</noscript>
+<script>
+(async()=>{
+  const files=Array.from({length:8},(_,i)=>`site.parts/part-${String(i+1).padStart(3,'0')}.txt`);
+  let encoded='';
+  for(const file of files){
+    const response=await fetch(file,{cache:'no-cache'});
+    if(!response.ok) throw new Error(`${file}: ${response.status}`);
+    encoded+=(await response.text()).trim();
+  }
+  const bytes=Uint8Array.from(atob(encoded),c=>c.charCodeAt(0));
+  const page=new TextDecoder('utf-8').decode(bytes);
+  document.open();document.write(page);document.close();
+})().catch(error=>{
+  document.getElementById('loader').innerHTML='<div class="flag"></div><strong>Unable to load candidate vision</strong><p>'+error.message+'</p>';
+});
+</script>
+</body>
+</html>
