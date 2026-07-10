@@ -1,49 +1,824 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="description" content="Russell Dudek — candidate vision for Vice President, Artificial Intelligence at Coastal." />
 <title>Russell Dudek | Coastal VP of AI Candidate Vision</title>
 <style>
-:root{--navy:#062C49;--teal:#13B8C7;--coral:#FF6B5A;--sand:#F8F3EA;--line:#D7E7E8;--muted:#607680}
-*{box-sizing:border-box}html,body{height:100%;margin:0}body{display:grid;place-items:center;background:linear-gradient(145deg,#F8F3EA,#EFF8F8);color:var(--navy);font-family:Arial,Helvetica,sans-serif;overflow:hidden}.loader{text-align:center;max-width:620px;padding:34px}.flag{width:58px;height:58px;margin:0 auto 20px;position:relative;overflow:hidden;border:2px solid var(--navy);background:#fff;animation:float 2.6s ease-in-out infinite}.flag:before{content:"";position:absolute;inset:0 50% 0 0;background:var(--teal)}.flag:after{content:"";position:absolute;left:50%;top:0;border-top:29px solid var(--coral);border-bottom:29px solid transparent;border-left:29px solid transparent}.loader strong{display:block;font-size:1.55rem;letter-spacing:-.03em}.loader p{color:var(--muted);margin:8px 0 18px}.bar{height:6px;background:var(--line);overflow:hidden;border-radius:99px}.bar span{display:block;width:34%;height:100%;background:linear-gradient(90deg,var(--teal),var(--coral));animation:load 1.15s ease-in-out infinite alternate}.status{font-size:.82rem;margin-top:12px;color:var(--muted)}@keyframes load{to{transform:translateX(195%)}}@keyframes float{50%{transform:translateY(-7px) rotate(.5deg)}}@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+:root{
+  --navy:#062C49;
+  --navy2:#0B3E63;
+  --deep:#021B2D;
+  --teal:#13B8C7;
+  --aqua:#72E3E1;
+  --coral:#FF6B5A;
+  --sun:#FFC35B;
+  --sand:#F8F3EA;
+  --foam:#F4FBFB;
+  --paper:#FFFFFF;
+  --ink:#173242;
+  --muted:#637984;
+  --line:#D8E7E8;
+  --shadow:0 30px 90px rgba(6,44,73,.16);
+  --soft-shadow:0 18px 46px rgba(6,44,73,.10);
+  --max:1220px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  color:var(--ink);
+  background:var(--sand);
+  font-family:Arial,Helvetica,sans-serif;
+  line-height:1.58;
+  letter-spacing:.001em;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+a{color:inherit}
+button{font:inherit}
+.wrap{width:min(var(--max),calc(100% - 44px));margin:auto}
+.section{position:relative;padding:98px 0}
+.white{background:var(--paper)}
+.foam{background:var(--foam)}
+.dark{background:var(--navy);color:#fff}
+.kicker{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
+  font-weight:950;color:var(--navy);margin-bottom:18px;
+}
+.dark .kicker{color:#fff}
+.kicker:before{
+  content:"";width:14px;height:14px;
+  background:linear-gradient(135deg,var(--teal) 0 50%,var(--coral) 50% 100%);
+  transform:rotate(45deg);
+}
+h1,h2,h3,p{margin-top:0}
+h1{
+  max-width:1100px;
+  font-size:clamp(3.35rem,7.4vw,7.6rem);
+  line-height:.89;
+  letter-spacing:-.069em;
+  margin-bottom:28px;
+}
+h2{
+  max-width:1080px;
+  font-size:clamp(2.3rem,4.8vw,4.85rem);
+  line-height:1;
+  letter-spacing:-.055em;
+  margin-bottom:18px;
+}
+h3{font-size:1.2rem;line-height:1.2;letter-spacing:-.02em;margin-bottom:10px}
+.lede{max-width:930px;font-size:clamp(1.13rem,2vw,1.5rem);line-height:1.52;color:#495F69}
+.dark .lede{color:#D8EAEC}
+.section-head{max-width:980px;margin-bottom:44px}
+.muted{color:var(--muted)}
+.teal{color:var(--teal)}
+
+/* progress + nav */
+#progress{
+  position:fixed;top:0;left:0;z-index:1000;height:3px;width:0;
+  background:linear-gradient(90deg,var(--teal),var(--aqua),var(--coral));
+  box-shadow:0 0 16px rgba(19,184,199,.55);
+}
+header{
+  position:sticky;top:0;z-index:90;
+  background:rgba(248,243,234,.88);
+  border-bottom:1px solid rgba(6,44,73,.1);
+  backdrop-filter:blur(18px);
+}
+.nav{min-height:80px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:14px;text-decoration:none}
+.wordmark{display:flex;align-items:center;gap:10px;font-size:1.56rem;font-weight:950;letter-spacing:-.045em;color:var(--navy)}
+.flag-mark{
+  width:37px;height:37px;position:relative;overflow:hidden;
+  border:2px solid var(--navy);background:#fff;
+}
+.flag-mark:before{content:"";position:absolute;inset:0 50% 0 0;background:var(--teal)}
+.flag-mark:after{
+  content:"";position:absolute;left:50%;top:0;
+  border-top:19px solid var(--coral);
+  border-bottom:19px solid transparent;
+  border-left:19px solid transparent;
+}
+.brand-sub{
+  border-left:1px solid var(--line);padding-left:14px;
+  color:var(--muted);font-size:.7rem;font-weight:850;letter-spacing:.085em;white-space:nowrap;
+}
+.navlinks{display:flex;align-items:center;gap:17px}
+.navlinks a{text-decoration:none;font-size:.82rem;font-weight:900;color:#425B66}
+.navlinks a:hover{color:var(--teal)}
+.print-btn{
+  border:0;background:var(--navy);color:#fff;padding:10px 15px;
+  cursor:pointer;font-weight:900;transition:.2s transform,.2s background;
+}
+.print-btn:hover{transform:translateY(-2px);background:var(--navy2)}
+
+/* hero */
+.hero{
+  min-height:calc(100vh - 80px);display:flex;align-items:center;
+  position:relative;overflow:hidden;padding:92px 0 86px;
+  background:
+    radial-gradient(circle at 86% 15%,rgba(114,227,225,.26),transparent 30%),
+    radial-gradient(circle at 12% 88%,rgba(255,107,90,.14),transparent 28%),
+    var(--sand);
+}
+.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:58px;align-items:center}
+.hero h1 .signal{position:relative;display:inline-block}
+.hero h1 .signal:after{
+  content:"";position:absolute;left:0;right:0;bottom:-11px;height:8px;
+  background:linear-gradient(90deg,var(--teal),var(--coral));
+}
+.hero .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:27px}
+.chip{background:#fff;border:1px solid var(--line);padding:10px 13px;font-size:.82rem;font-weight:900;box-shadow:0 7px 20px rgba(6,44,73,.05)}
+.hero-empathy{
+  margin-top:38px;padding:25px 28px;color:#fff;background:linear-gradient(115deg,var(--navy),#0c4f76);
+  border-left:8px solid var(--coral);box-shadow:var(--shadow);position:relative;overflow:hidden;
+}
+.hero-empathy:after{
+  content:"";position:absolute;width:230px;height:230px;border-radius:50%;
+  border:38px solid rgba(114,227,225,.08);right:-115px;top:-120px;
+}
+.hero-empathy p{margin:0;max-width:880px;font-size:clamp(1.16rem,2vw,1.46rem);font-weight:900;line-height:1.42;position:relative;z-index:2}
+.hero-sea{
+  min-height:610px;position:relative;background:linear-gradient(155deg,#093858,#031F34);
+  box-shadow:var(--shadow);overflow:hidden;border-radius:2px;
+}
+.hero-sea:before{
+  content:"";position:absolute;inset:-20% -30% 48% 20%;
+  background:radial-gradient(circle,rgba(114,227,225,.22),transparent 62%);
+}
+.hero-caption{
+  position:absolute;left:28px;top:26px;color:#D8F2F4;font-size:.72rem;
+  letter-spacing:.13em;text-transform:uppercase;font-weight:900;z-index:7
+}
+.beacon{
+  position:absolute;left:50%;top:46%;transform:translate(-50%,-50%);z-index:8;
+  width:170px;height:170px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff 0 10%,var(--aqua) 11% 25%,var(--teal) 26% 58%,#0e7890 59% 100%);
+  box-shadow:0 0 0 25px rgba(114,227,225,.08),0 0 0 54px rgba(114,227,225,.045),0 28px 70px rgba(0,0,0,.25);
+  display:grid;place-items:center;animation:beaconPulse 4.8s ease-in-out infinite;
+}
+.beacon .flag-mark{width:74px;height:74px;border-color:#fff;box-shadow:0 14px 32px rgba(0,0,0,.18)}
+.beacon .flag-mark:after{border-top-width:37px;border-bottom-width:37px;border-left-width:37px}
+@keyframes beaconPulse{50%{box-shadow:0 0 0 35px rgba(114,227,225,.07),0 0 0 70px rgba(114,227,225,.03),0 28px 70px rgba(0,0,0,.25)}}
+.ring{position:absolute;border:1px dashed rgba(114,227,225,.4);border-radius:50%;left:50%;top:46%;transform:translate(-50%,-50%);z-index:4;animation:spin 28s linear infinite}
+.r1{width:360px;height:360px}.r2{width:505px;height:505px;animation-direction:reverse;animation-duration:42s}
+@keyframes spin{to{transform:translate(-50%,-50%) rotate(360deg)}}
+.node{
+  position:absolute;width:118px;height:118px;border-radius:50%;background:#fff;color:var(--navy);
+  display:grid;place-items:center;text-align:center;padding:12px;font-size:.76rem;font-weight:950;z-index:9;box-shadow:0 16px 32px rgba(0,0,0,.16)
+}
+.n1{left:7%;top:17%;animation:drift 5s ease-in-out infinite}.n2{right:6%;top:21%;animation:drift 6s ease-in-out infinite reverse}.n3{left:10%;bottom:16%;animation:drift 5.5s ease-in-out infinite reverse}.n4{right:6%;bottom:16%;animation:drift 6.2s ease-in-out infinite}
+@keyframes drift{50%{transform:translateY(-9px) rotate(.5deg)}}
+.wave-svg{position:absolute;left:-4%;right:-4%;bottom:-2px;width:108%;height:205px;z-index:3}
+.wave-back{animation:waveSlide 10s ease-in-out infinite alternate;transform-origin:center}
+.wave-front{animation:waveSlide 7s ease-in-out infinite alternate-reverse;transform-origin:center}
+@keyframes waveSlide{to{transform:translateX(28px) scaleY(1.06)}}
+
+/* three jobs */
+.three-jobs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.job-card{
+  position:relative;min-height:360px;background:#fff;border:1px solid var(--line);
+  padding:28px;overflow:hidden;transition:.25s transform,.25s box-shadow;
+}
+.job-card:hover{transform:translateY(-8px);box-shadow:var(--soft-shadow)}
+.job-card .index{font-size:.75rem;letter-spacing:.14em;color:var(--coral);font-weight:950}
+.job-card h3{font-size:1.6rem;color:var(--navy);margin-top:14px}
+.job-card p{color:#576E79}
+.job-card ul{padding-left:18px;color:#536A75;font-size:.92rem}.job-card li{margin-bottom:8px}
+.job-card .big-word{
+  position:absolute;right:-12px;bottom:-28px;font-size:5.2rem;letter-spacing:-.08em;
+  font-weight:950;color:rgba(19,184,199,.07);white-space:nowrap
+}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.stat{background:#fff;padding:25px 20px;min-height:260px;position:relative;overflow:hidden}
+.stat:after{
+  content:"";position:absolute;width:90px;height:90px;right:-45px;top:-45px;
+  transform:rotate(45deg);background:rgba(19,184,199,.08)
+}
+.stat .num{font-size:2.4rem;font-weight:950;line-height:1;color:var(--navy);margin-bottom:15px}
+.stat h3{color:var(--navy)}
+.stat p{font-size:.9rem;color:#586F79}
+.stat .imp{display:block;margin-top:14px;padding-top:12px;border-top:1px solid var(--line);font-weight:900;font-size:.86rem}
+
+/* practice tabs */
+.practice-shell{
+  display:grid;grid-template-columns:310px 1fr;min-height:590px;
+  background:#fff;border:1px solid var(--line);box-shadow:var(--shadow)
+}
+.tabs{padding:14px;background:#EAF6F6;border-right:1px solid var(--line)}
+.tab{
+  width:100%;text-align:left;border:0;background:transparent;color:#58717B;
+  padding:18px 16px;margin-bottom:7px;font-weight:950;cursor:pointer;position:relative;transition:.2s
+}
+.tab:after{content:"";position:absolute;left:0;bottom:0;width:0;height:3px;background:var(--coral);transition:.25s}
+.tab:hover:after{width:100%}
+.tab.active{background:var(--navy);color:#fff}.tab.active:after{width:100%}
+.panel{padding:43px}
+.panel article{display:none}.panel article.active{display:block;animation:panelIn .35s ease}
+@keyframes panelIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.big-q{font-size:clamp(1.75rem,3vw,2.95rem);line-height:1.11;letter-spacing:-.04em;font-weight:950;color:var(--navy);margin-bottom:22px}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
+.mini{border-top:5px solid var(--teal);padding-top:14px}.mini:nth-child(2){border-color:var(--coral)}.mini:nth-child(3){border-color:var(--navy)}
+.mini b{display:block;margin-bottom:6px}.mini p{font-size:.9rem;color:var(--muted)}
+
+/* partner compass */
+.compass-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:32px}
+.compass-copy{
+  padding:34px;background:var(--navy);color:#fff;position:relative;overflow:hidden
+}
+.compass-copy:after{
+  content:"";position:absolute;width:280px;height:280px;border:45px solid rgba(114,227,225,.12);
+  border-radius:50%;right:-140px;bottom:-140px
+}
+.compass-copy h3{font-size:clamp(2rem,3.4vw,3.7rem);line-height:1.02;letter-spacing:-.045em}
+.compass-copy p{color:#D6E7E9}
+.matrix{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
+.matrix-card{background:#fff;border:1px solid var(--line);padding:23px;min-height:205px;transition:.25s transform}
+.matrix-card:hover{transform:translateY(-5px)}
+.matrix-card .label{font-size:.7rem;color:var(--coral);font-weight:950;letter-spacing:.12em;text-transform:uppercase}
+.matrix-card h3{margin-top:10px;color:var(--navy)}
+.matrix-card p{font-size:.91rem;color:#5A6F78}
+
+/* team blueprint */
+.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.role-card{background:#fff;border:1px solid var(--line);padding:25px;min-height:285px;position:relative;overflow:hidden}
+.role-card .role-no{font-size:2rem;color:rgba(19,184,199,.25);font-weight:950}
+.role-card h3{font-size:1.38rem;color:var(--navy);margin-top:8px}
+.role-card p{font-size:.91rem;color:#596F79}
+.role-card .first-hire{display:inline-block;margin-top:10px;background:var(--navy);color:#fff;padding:7px 10px;font-size:.7rem;font-weight:950;letter-spacing:.08em;text-transform:uppercase}
+.team-note{margin-top:18px;padding:22px 25px;border-left:6px solid var(--coral);background:linear-gradient(90deg,#fff,#EFF9F9);font-weight:900}
+
+/* flywheel */
+.flywheel-shell{display:grid;grid-template-columns:.86fr 1.14fr;gap:28px}
+.flywheel-copy{padding:34px;background:#fff;color:var(--ink)}
+.flywheel-copy h3{font-size:clamp(2rem,3.4vw,3.65rem);line-height:1.02;letter-spacing:-.045em;color:var(--navy)}
+.flywheel-copy p{color:#536872}
+.flywheel{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.step{padding:22px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);min-height:190px}
+.step .index{color:var(--aqua);font-size:.76rem;font-weight:950;letter-spacing:.12em}
+.step b{display:block;color:#fff;margin:8px 0}.step p{font-size:.9rem;color:#CEE2E4}
+.step.full{grid-column:1/-1;border-left:6px solid var(--coral)}
+
+/* market */
+.market-list{display:grid;gap:13px}
+.market{
+  display:grid;grid-template-columns:230px 1fr;gap:24px;align-items:center;
+  background:#fff;border:1px solid var(--line);padding:22px 24px;transition:.25s transform,.25s box-shadow
+}
+.market:hover{transform:translateX(5px);box-shadow:var(--soft-shadow)}
+.market .label{font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);font-weight:950}
+.market h3{font-size:1.35rem;color:var(--navy);margin:8px 0}.market p{margin:0;color:#586E78}
+
+/* proof */
+.proof-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.proof{min-height:335px;background:#fff;border:1px solid var(--line);padding:25px;display:flex;flex-direction:column;transition:.25s transform,.25s box-shadow}
+.proof:hover{transform:translateY(-7px);box-shadow:var(--soft-shadow)}
+.proof .eyebrow{font-size:.7rem;color:var(--coral);text-transform:uppercase;letter-spacing:.12em;font-weight:950;margin-bottom:15px}
+.proof h3{font-size:1.42rem;color:var(--navy)}.proof p{font-size:.92rem;color:#586C76}
+.proof .bottom{margin-top:auto;padding-top:14px;border-top:1px solid var(--line);font-weight:900}
+.fit-band{margin-top:18px;display:grid;grid-template-columns:.72fr 1.28fr;background:#fff;border:1px solid var(--line)}
+.signal-cluster{min-height:350px;background:linear-gradient(145deg,var(--teal),var(--navy));position:relative;overflow:hidden}
+.signal-cluster .f{position:absolute;width:88px;height:88px;background:#fff;box-shadow:0 16px 32px rgba(0,0,0,.16)}
+.signal-cluster .f1{left:18%;top:12%;background:linear-gradient(90deg,var(--coral) 0 50%,#fff 50%)}
+.signal-cluster .f2{right:7%;top:58%;background:linear-gradient(135deg,var(--teal) 0 50%,#fff 50%)}
+.signal-cluster .f3{left:55%;bottom:6%;background:linear-gradient(90deg,var(--navy) 0 33%,#fff 33% 66%,var(--sun) 66%)}
+.fit-copy{padding:38px}
+.fit-copy h3{font-size:clamp(2rem,3.4vw,3.7rem);letter-spacing:-.045em;color:var(--navy)}
+
+/* timeline */
+.timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.phase{background:#fff;padding:28px;min-height:410px}
+.phase .days{font-size:.76rem;color:var(--coral);font-weight:950;letter-spacing:.14em;text-transform:uppercase}
+.phase h3{font-size:1.55rem;color:var(--navy);margin:12px 0 14px}
+.phase p,.phase li{font-size:.91rem;color:#596F79}.phase ul{padding-left:18px}.phase li{margin-bottom:8px}
+
+/* objection */
+.objection{background:linear-gradient(120deg,var(--navy) 0 61%,var(--deep) 61% 100%);color:#fff;padding:0}
+.ob-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:48px;padding:84px 0}
+.ob-title{font-size:clamp(2.3rem,4.6vw,4.9rem);line-height:1.04;letter-spacing:-.056em;font-weight:950}
+.ob-answer{border-left:7px solid var(--coral);padding-left:25px;align-self:center}
+.ob-answer p{color:#D8E8EA;font-size:1.04rem}.ob-answer .close{color:#fff;font-weight:950;font-size:1.2rem}
+
+/* questions + CTA */
+.questions-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
+.question{position:relative;min-height:175px;background:#fff;border:1px solid var(--line);padding:25px;overflow:hidden}
+.question:after{content:"?";position:absolute;right:14px;top:-14px;font-family:Georgia,serif;font-size:5.7rem;color:rgba(19,184,199,.1)}
+.question p{font-size:1.12rem;font-weight:900;line-height:1.44;max-width:88%}
+.cta{
+  margin-top:42px;padding:35px;background:linear-gradient(115deg,var(--navy),#0c4f76);
+  color:#fff;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;box-shadow:var(--shadow);
+  position:relative;overflow:hidden
+}
+.cta:after{content:"";position:absolute;width:280px;height:280px;border-radius:50%;border:42px solid rgba(114,227,225,.08);right:-120px;top:-160px}
+.cta h3{font-size:1.8rem;margin-bottom:5px;position:relative;z-index:2}.cta p{margin:0;color:#D9E8EA;position:relative;z-index:2}
+.actions,.docs{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end;position:relative;z-index:2}.docs{margin-top:12px}
+.btn,.doc-btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;font-weight:950;transition:.2s transform}
+.btn:hover,.doc-btn:hover{transform:translateY(-3px)}
+.btn{min-height:46px;padding:0 17px;color:#fff;border:1px solid rgba(255,255,255,.6)}
+.btn.primary{background:var(--coral);border-color:var(--coral)}
+.doc-btn{padding:9px 13px;background:#fff;color:var(--navy);font-size:.82rem}
+
+/* footer */
+footer{padding:48px 0 64px;background:#fff;border-top:1px solid var(--line)}
+details{border:1px solid var(--line);background:#fff}
+summary{padding:17px 19px;cursor:pointer;font-weight:950;color:var(--navy)}
+.sources{padding:0 20px 20px}.sources li{margin:9px 0;font-size:.86rem;color:#60747C}.sources a{color:var(--navy);text-underline-offset:3px}
+.note{font-size:.8rem;color:#7B8B91;margin-top:16px}
+
+/* animation */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:none}
+.stagger>*{opacity:0;transform:translateY(18px);transition:.6s ease}
+.stagger.visible>*{opacity:1;transform:none}.stagger.visible>*:nth-child(2){transition-delay:.08s}.stagger.visible>*:nth-child(3){transition-delay:.16s}.stagger.visible>*:nth-child(4){transition-delay:.24s}.stagger.visible>*:nth-child(5){transition-delay:.32s}
+.spotlight{
+  position:fixed;width:280px;height:280px;border-radius:50%;pointer-events:none;z-index:-1;
+  background:radial-gradient(circle,rgba(19,184,199,.09),transparent 70%);
+  transform:translate(-50%,-50%);transition:opacity .2s
+}
+@media(prefers-reduced-motion:reduce){
+  *,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .reveal,.stagger>*{opacity:1!important;transform:none!important}
+}
+
+/* print brief */
+#printBrief{display:none}
+@page{size:letter;margin:.45in}
+@media print{
+  header,main,footer,#progress,.spotlight{display:none!important}
+  #printBrief{display:block!important;color:#111;background:#fff;font-family:Arial,Helvetica,sans-serif}
+  .print-page{page-break-after:always;min-height:9.75in;padding:.04in;position:relative}
+  .print-page:last-child{page-break-after:auto}
+  .print-brand{display:flex;align-items:center;gap:10px;border-bottom:4px solid var(--teal);padding-bottom:8px;margin-bottom:16px}
+  .print-brand strong{font-size:18pt;color:var(--navy)}
+  .print-page h1{font-size:28pt;line-height:.95;margin:0 0 14px}
+  .print-page h2{font-size:20pt;line-height:1.05;margin:0 0 12px;color:var(--navy)}
+  .print-page h3{font-size:12pt;color:var(--navy);margin:0 0 6px}
+  .print-page p,.print-page li{font-size:9.3pt;line-height:1.35}
+  .print-grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .print-box{border:1px solid #CCDADD;padding:12px;break-inside:avoid}
+  .print-accent{border-left:6px solid var(--coral);padding-left:12px}
+  .print-stat{font-size:22pt;font-weight:950;color:var(--navy)}
+}
+
+@media(max-width:1040px){
+  .hero-grid,.compass-grid,.flywheel-shell,.fit-band,.ob-grid{grid-template-columns:1fr}
+  .three-jobs,.proof-grid,.team-grid{grid-template-columns:repeat(2,1fr)}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .practice-shell{grid-template-columns:1fr}.tabs{display:grid;grid-template-columns:repeat(2,1fr);border-right:0;border-bottom:1px solid var(--line)}
+  .timeline{grid-template-columns:1fr}.hero-sea{min-height:580px}
+}
+@media(max-width:720px){
+  .wrap{width:min(var(--max),calc(100% - 26px))}.section{padding:68px 0}
+  .navlinks a{display:none}.brand-sub{display:none}h1{font-size:3.3rem}
+  .three-jobs,.proof-grid,.team-grid,.stats,.matrix,.three,.questions-grid,.flywheel{grid-template-columns:1fr}
+  .tabs{grid-template-columns:1fr}.panel{padding:27px 22px}.market{grid-template-columns:1fr}.cta{grid-template-columns:1fr}.actions,.docs{justify-content:flex-start}
+  .hero-sea{min-height:500px}.r2{width:420px;height:420px}.r1{width:310px;height:310px}.node{width:94px;height:94px;font-size:.68rem}.beacon{width:140px;height:140px}
+}
 </style>
 </head>
 <body>
-<div class="loader" id="loader"><div class="flag"></div><strong>Coastal AI Practice Candidate Vision</strong><p>Reading the signals…</p><div class="bar"><span></span></div><div class="status" id="status">Loading 0 of 8</div></div>
-<noscript>This candidate vision requires JavaScript to load.</noscript>
+<div id="progress"></div>
+<div class="spotlight" id="spotlight"></div>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top">
+      <span class="wordmark"><span class="flag-mark"></span>Coastal</span>
+      <span class="brand-sub">VICE PRESIDENT • ARTIFICIAL INTELLIGENCE • CANDIDATE VISION</span>
+    </a>
+    <nav class="navlinks">
+      <a href="#signal">Signal</a>
+      <a href="#practice">Practice</a>
+      <a href="#market">Market</a>
+      <a href="#proof">Why Russ</a>
+      <button class="print-btn" onclick="window.print()">Print brief</button>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="kicker">Russell Dudek • Candidate Vision</div>
+      <h1>Turn Coastal's AI strengths into a <span class="signal">market signal.</span></h1>
+      <p class="lede">
+        Coastal already has the trust, delivery proof, Agentforce credibility, AI Operations research, and TCS-backed scale.
+        Connect those strengths into one model-diverse practice that helps enterprises choose well, put AI to work, and keep it creating value.
+      </p>
+      <div class="chips">
+        <span class="chip">Practice building</span>
+        <span class="chip">GTM & client advisory</span>
+        <span class="chip">OpenAI + Anthropic + Salesforce</span>
+        <span class="chip">AI engineering</span>
+        <span class="chip">Responsible operations</span>
+      </div>
+      <div class="hero-empathy reveal">
+        <p>
+          You may be wary of two kinds of candidate: the AI technologist who has never built a market, and the consulting leader who can sell a vision but cannot interrogate the machinery behind it. My career has been built in the seam between those worlds.
+        </p>
+      </div>
+    </div>
+
+    <aside class="hero-sea reveal" aria-label="Coastal AI practice stakeholder map">
+      <div class="hero-caption">One practice • Four constituencies • One signal</div>
+      <div class="ring r2"></div><div class="ring r1"></div>
+      <div class="node n1">Market<br>Point of View</div>
+      <div class="node n2">Sales +<br>Alliances</div>
+      <div class="node n3">AI Engineers<br>+ Delivery</div>
+      <div class="node n4">Clients +<br>Outcomes</div>
+      <div class="beacon"><div class="flag-mark"></div></div>
+      <svg class="wave-svg" viewBox="0 0 1000 250" preserveAspectRatio="none" aria-hidden="true">
+        <path class="wave-back" d="M0 128 C145 80,270 190,430 130 S700 65,1000 140 L1000 250 L0 250 Z" fill="rgba(19,184,199,.28)"/>
+        <path class="wave-front" d="M0 165 C180 100,320 225,510 150 S790 115,1000 165 L1000 250 L0 250 Z" fill="rgba(114,227,225,.28)"/>
+      </svg>
+    </aside>
+  </div>
+</section>
+
+<section class="section foam" id="signal">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker">My reading of the role</div>
+      <h2>Three jobs are hiding inside this one title.</h2>
+      <p class="lede">The VP has to create a market position, a delivery system, and an internal institution at the same time. Miss one, and the other two become harder.</p>
+    </div>
+    <div class="three-jobs stagger">
+      <article class="job-card">
+        <div class="index">01 / MARKET</div><h3>Define what Coastal should mean in AI.</h3>
+        <p>Build a point of view and services portfolio that sales can explain, marketing can amplify, partners can support, and clients can buy.</p>
+        <ul><li>Services architecture</li><li>Industry narratives</li><li>Executive advisory</li><li>Partner positioning</li></ul>
+        <div class="big-word">SIGNAL</div>
+      </article>
+      <article class="job-card">
+        <div class="index">02 / DELIVERY</div><h3>Make excellent AI implementation repeatable.</h3>
+        <p>Build engineering standards around evaluation, architecture, governance, data, cost, observability, adoption, and value realization.</p>
+        <ul><li>Reference patterns</li><li>Delivery guardrails</li><li>Evaluation discipline</li><li>First AI engineering team</li></ul>
+        <div class="big-word">PROOF</div>
+      </article>
+      <article class="job-card">
+        <div class="index">03 / INSTITUTION</div><h3>Raise the whole firm's AI fluency.</h3>
+        <p>Equip sales, marketing, delivery, alliances, and internal teams with practical language, tools, and confidence.</p>
+        <ul><li>Internal enablement</li><li>Sales coaching</li><li>Thought leadership</li><li>Communities of practice</li></ul>
+        <div class="big-word">SCALE</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section white">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker">The signals already in the water</div>
+      <h2>Coastal is not starting from zero. That is exactly why the practice must be coherent.</h2>
+      <p class="lede">Strong distributed assets create opportunity—but only if the market can see how they connect.</p>
+    </div>
+    <div class="stats stagger">
+      <article class="stat"><div class="num">8,001</div><h3>Projects delivered</h3><p>Public delivery proof gives the practice an operating base, not a slide-deck starting point.</p><span class="imp">Trust exists. The question is how AI extends it.</span></article>
+      <article class="stat"><div class="num">800</div><h3>Organizations studied</h3><p>Coastal and Oxford Economics surveyed U.S. business and technology leaders running AI programs.</p><span class="imp">Research can become GTM leverage.</span></article>
+      <article class="stat"><div class="num">46%</div><h3>Expectations gap</h3><p>Nearly half of surveyed leaders said AI had not met expectations.</p><span class="imp">Clients need operating help—not another demo.</span></article>
+      <article class="stat"><div class="num">73%</div><h3>Adoption walls</h3><p>Coastal's research says adoption remains a major barrier.</p><span class="imp">Change and enablement belong in the offer.</span></article>
+      <article class="stat"><div class="num">3.6×</div><h3>Dedicated team effect</h3><p>Organizations with dedicated AI teams were more likely to report autonomous AI in production.</p><span class="imp">The team model itself matters.</span></article>
+    </div>
+  </div>
+</section>
+
+<section class="section foam" id="practice">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker">Proposed practice architecture</div>
+      <h2>Four offers. One client journey. Multiple technology paths.</h2>
+      <p class="lede">The practice becomes easier to sell when every offer answers a different executive question and points naturally to the next step.</p>
+    </div>
+
+    <div class="practice-shell reveal">
+      <div class="tabs">
+        <button class="tab active" data-target="north">1. AI True North</button>
+        <button class="tab" data-target="build">2. Build & Integrate</button>
+        <button class="tab" data-target="adopt">3. Adopt & Rewire</button>
+        <button class="tab" data-target="run">4. Run & Optimize</button>
+      </div>
+      <div class="panel">
+        <article id="north" class="active">
+          <div class="big-q">“What should we do with AI—and what should we deliberately not do yet?”</div>
+          <p>Turn executive ambition into a prioritized portfolio based on business value, feasibility, data readiness, risk, adoption burden, partner fit, and time-to-proof.</p>
+          <div class="three">
+            <div class="mini"><b>Client artifact</b><p>AI opportunity portfolio, architecture options, value hypotheses, guardrails, and sequencing.</p></div>
+            <div class="mini"><b>GTM value</b><p>A strong executive entry point that opens delivery work without pretending every problem is a platform problem.</p></div>
+            <div class="mini"><b>Coastal edge</b><p>Industry fluency, data depth, customer trust, and direct paths into Salesforce-native or broader AI work.</p></div>
+          </div>
+        </article>
+        <article id="build">
+          <div class="big-q">“What is the smallest useful production system we can ship safely enough to learn from real work?”</div>
+          <p>Build and integrate AI solutions around the entire workflow: model, data, context, tools, human decisions, evaluations, controls, cost, and adoption.</p>
+          <div class="three">
+            <div class="mini"><b>Salesforce path</b><p>Agentforce, Data Cloud, MuleSoft, Slack, Tableau, and Customer 360 integration.</p></div>
+            <div class="mini"><b>Model-diverse path</b><p>OpenAI or Anthropic solutions with governed data, retrieval, tools, and workflow integration.</p></div>
+            <div class="mini"><b>Delivery standard</b><p>Evaluation, acceptance criteria, security, cost visibility, rollback, and ownership before launch.</p></div>
+          </div>
+        </article>
+        <article id="adopt">
+          <div class="big-q">“Did we launch software—or did we change the way better work gets done?”</div>
+          <p>Make role redesign, manager enablement, training, champion networks, office hours, telemetry, and feedback part of the product plan.</p>
+          <div class="three">
+            <div class="mini"><b>Measure</b><p>Activation, repeat use, workflow penetration, confidence, business outcomes, and exceptions.</p></div>
+            <div class="mini"><b>Enable</b><p>Role-based curricula, sales and delivery playbooks, coaching, and communities of practice.</p></div>
+            <div class="mini"><b>Improve</b><p>Feedback → backlog → release → training → measurement as a repeatable operating loop.</p></div>
+          </div>
+        </article>
+        <article id="run">
+          <div class="big-q">“Who owns the agent after everyone celebrates the launch?”</div>
+          <p>Extend Coastal's Waves for Agentic Ops logic into a broader AI operations discipline: behavior, quality, cost, governance, data, adoption, and value over time.</p>
+          <div class="three">
+            <div class="mini"><b>Operate</b><p>Performance monitoring, drift, cost, incident response, evaluation, and continuous improvement.</p></div>
+            <div class="mini"><b>Govern</b><p>Authority boundaries, policy, traceability, data use, security, and exception management.</p></div>
+            <div class="mini"><b>Expand</b><p>Quarterly value reviews, portfolio planning, scale gates, and new-use-case sequencing.</p></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section white">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker">Partner compass</div>
+      <h2>Partner deeply. Stay client-first. Never let the logo choose the architecture.</h2>
+      <p class="lede">A strong VP should build real ecosystem credibility while preserving Coastal's ability to recommend what the workflow, data, governance, economics, and value case actually require.</p>
+    </div>
+    <div class="compass-grid">
+      <aside class="compass-copy reveal">
+        <h3>Protect the Salesforce edge. Widen the advisory aperture.</h3>
+        <p>Coastal's Agentforce, Data Cloud, and Salesforce credentials are strategic advantages. The opportunity is to make those strengths part of a larger AI advisory conversation—not a boundary around it.</p>
+      </aside>
+      <div class="matrix stagger">
+        <article class="matrix-card"><div class="label">Salesforce AI</div><h3>Own the native advantage.</h3><p>Agentforce, Data Cloud, MuleSoft, Slack, Tableau, CRM context, and managed agent operations.</p></article>
+        <article class="matrix-card"><div class="label">OpenAI</div><h3>Build enterprise deployment fluency.</h3><p>Reasoning, multimodal workflows, tools, retrieval, agent orchestration, and enterprise integration patterns.</p></article>
+        <article class="matrix-card"><div class="label">Anthropic</div><h3>Build responsible-use credibility.</h3><p>Enterprise workflows, long-context knowledge work, agentic patterns, safety, evaluation, and governance.</p></article>
+        <article class="matrix-card"><div class="label">Data ecosystem</div><h3>Make context a first-class product.</h3><p>Snowflake and broader cloud/data foundations, semantic layers, retrieval quality, integration, observability, and cost.</p></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section foam">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker">Initial team blueprint</div>
+      <h2>Hire for leverage, not headcount theater.</h2>
+      <p class="lede">The first team should cover the seams where AI projects actually fail: architecture, evaluation, workflow engineering, and adoption—not merely prompt construction.</p>
+    </div>
+    <div class="team-grid stagger">
+      <article class="role-card"><div class="role-no">01</div><h3>AI Solutions Architect</h3><p>Owns model-diverse architecture, enterprise integration, data/context patterns, security, cost, and reference designs.</p><span class="first-hire">Foundational hire</span></article>
+      <article class="role-card"><div class="role-no">02</div><h3>Applied AI Engineer</h3><p>Builds retrieval, tools, agents, workflows, evaluations, and production integrations across target platforms.</p><span class="first-hire">Foundational hire</span></article>
+      <article class="role-card"><div class="role-no">03</div><h3>AI Product / Adoption Lead</h3><p>Connects users, workflow redesign, product discovery, training, telemetry, and value realization.</p><span class="first-hire">High-leverage role</span></article>
+      <article class="role-card"><div class="role-no">04</div><h3>Responsible AI & Evaluation</h3><p>Defines testing, red-team patterns, guardrails, documentation, traceability, and client confidence mechanisms.</p><span class="first-hire">Shared or dedicated</span></article>
+    </div>
+    <div class="team-note reveal">My bias: start with a small senior team that can ship, teach, codify patterns, and strengthen pursuits. Let repeatable demand—not internal excitement—earn the next wave of hiring.</div>
+  </div>
+</section>
+
+<section class="section dark">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker">Practice flywheel</div>
+      <h2>Market authority should come from delivery evidence—and delivery should get easier because the market story is clear.</h2>
+      <p class="lede">The practice should compound across GTM, delivery, alliances, thought leadership, and internal enablement.</p>
+    </div>
+    <div class="flywheel-shell">
+      <aside class="flywheel-copy reveal">
+        <h3>Build the signal once. Reuse it everywhere.</h3>
+        <p>A powerful AI practice is not a collection of isolated experts. It is a repeatable system for turning market learning into offers, offers into wins, wins into delivery proof, and delivery proof back into stronger market authority.</p>
+      </aside>
+      <div class="flywheel stagger">
+        <article class="step"><div class="index">01 / LISTEN</div><b>Market + client signal</b><p>Research, account patterns, partner roadmaps, sales objections, delivery lessons, and competitive movement.</p></article>
+        <article class="step"><div class="index">02 / PACKAGE</div><b>Offers + narratives</b><p>Service architecture, value stories, qualification logic, discovery workshops, and clear next steps.</p></article>
+        <article class="step"><div class="index">03 / SELL</div><b>Executive trust</b><p>Client advisory, pitches, roundtables, point-of-view content, and account-specific hypotheses.</p></article>
+        <article class="step"><div class="index">04 / DELIVER</div><b>Evidence</b><p>Reusable methods, evaluations, guardrails, adoption patterns, and measurable value realization.</p></article>
+        <article class="step full"><div class="index">05 / COMPOUND</div><b>Turn evidence into the next wave.</b><p>Customer stories, benchmarks, accelerators, partner credibility, training content, stronger pricing confidence, and expanded client relationships.</p></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section white" id="market">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker">Competitive landscape</div>
+      <h2>The AI consulting battlefield is moving closer to deployment.</h2>
+      <p class="lede">That creates pressure—but it also makes Coastal's combination of agility, trust, Salesforce depth, AI Operations thinking, and TCS-backed scale more valuable.</p>
+    </div>
+    <div class="market-list reveal">
+      <article class="market"><div><div class="label">Model providers</div><h3>OpenAI is moving closer to enterprise deployment.</h3></div><p>Deep alliances with global consulting firms and increased deployment focus mean model providers are becoming more influential in services ecosystems—not just software vendors.</p></article>
+      <article class="market"><div><div class="label">Anthropic ecosystem</div><h3>Partner networks are becoming strategic channels.</h3></div><p>Certification, responsible use, technical credibility, and repeatable deployment capability are becoming meaningful differentiators for enterprise partners.</p></article>
+      <article class="market"><div><div class="label">Global consultancies</div><h3>The giants are pairing strategy with forward-deployed engineering.</h3></div><p>Large firms are building embedded AI delivery models and industry solutions. Their scale is real; so are their cost, complexity, and speed disadvantages.</p></article>
+      <article class="market"><div><div class="label">Coastal opportunity</div><h3>Enterprise capability. Midmarket agility. Human trust.</h3></div><p>The opportunity is not to imitate a global consultancy. It is to combine the best of enterprise delivery discipline with the directness and speed clients already value in Coastal.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section foam" id="proof">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker">What I bring to the whiteboard</div>
+      <h2>I have spent my career making complex technology legible, useful, and operational.</h2>
+      <p class="lede">My fit is not just AI fluency. It is the combination of builder instinct, technical range, market translation, operating leadership, and the ability to make ideas survive real work.</p>
+    </div>
+    <div class="proof-grid stagger">
+      <article class="proof"><div class="eyebrow">Practice builder</div><h3>From ambiguity to an operating system</h3><p>AI readiness frameworks, advisory concepts, agentic workflows, product ideas, and operating models built from low-structure beginnings.</p><p class="bottom">I naturally think in offers, mechanisms, feedback loops, and reusable patterns.</p></article>
+      <article class="proof"><div class="eyebrow">Technical depth</div><h3>Enough range to cross the seams</h3><p>Advanced electronics, robotics, machine vision, autonomous systems, AI workflows, RAG, Python, TensorFlow, and enterprise software.</p><p class="bottom">I can speak with engineers without losing the business conversation.</p></article>
+      <article class="proof"><div class="eyebrow">Executive translation</div><h3>Hard ideas into action</h3><p>Published technical work, industry talks, consortium participation, strategic customer programs, AI advisory, and cross-functional leadership.</p><p class="bottom">Thought leadership is strongest when it can survive a client question.</p></article>
+      <article class="proof"><div class="eyebrow">Operating credibility</div><h3>Strategy with scar tissue</h3><p>Amazon scale, high-reliability manufacturing, regulated autonomous systems, field robotics, customer operations, and rapid organizational change.</p><p class="bottom">I know where elegant strategies usually break.</p></article>
+    </div>
+
+    <div class="fit-band reveal">
+      <div class="signal-cluster"><div class="f f1"></div><div class="f f2"></div><div class="f f3"></div></div>
+      <div class="fit-copy">
+        <div class="kicker">Why the fit is different</div>
+        <h3>Coastal needs a market-facing AI leader who also respects the machinery of delivery.</h3>
+        <p>My career has repeatedly lived between those worlds: technical ideas and customer value, executive intent and operational reality, innovation and governance, strategy and adoption.</p>
+        <p>The job is not merely to be the smartest AI person in the room. The job is to make the whole firm smarter about AI—and make clients feel the difference.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section white" id="plan">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker">First 180 days</div>
+      <h2>Listen hard. Choose a position. Package the offers. Co-sell. Prove.</h2>
+    </div>
+    <div class="timeline stagger">
+      <article class="phase"><div class="days">Days 0–45</div><h3>Read the currents</h3><p>Understand the real starting point before declaring the answer.</p><ul><li>Executive and practice-leader listening tour</li><li>Pipeline, win/loss, and account-pattern analysis</li><li>Inventory current offers, accelerators, pilots, and delivery lessons</li><li>Map Salesforce, OpenAI, Anthropic, Snowflake, and TCS leverage points</li><li>Identify three strongest client beachheads</li></ul></article>
+      <article class="phase"><div class="days">Days 46–100</div><h3>Raise the signal</h3><p>Make Coastal's point of view and service architecture easy to understand inside and outside the company.</p><ul><li>Publish the practice point of view</li><li>Package the four-offer client journey</li><li>Create discovery workshop and qualification tools</li><li>Define evaluation and delivery standards</li><li>Launch sales, marketing, alliance, and delivery enablement</li></ul></article>
+      <article class="phase"><div class="days">Days 101–180</div><h3>Win and compound</h3><p>Co-sell lighthouse opportunities, build the initial team, and convert proof into market authority.</p><ul><li>Shape priority pursuits and executive conversations</li><li>Recruit the first senior AI hires</li><li>Create partner-aligned GTM plays</li><li>Turn delivery evidence into case stories and thought leadership</li><li>Establish quarterly practice review: pipeline, wins, quality, talent, partner leverage, and client value</li></ul></article>
+    </div>
+  </div>
+</section>
+
+<section class="section objection">
+  <div class="wrap ob-grid">
+    <div class="ob-title reveal">“You may be thinking: Russ has the operating depth—but is he a career AI consulting practice leader?”</div>
+    <div class="ob-answer reveal">
+      <p><strong>No—and I would not pretend otherwise.</strong></p>
+      <p>My career has been built closer to the point where technology has to work: advanced electronics, manufacturing, Amazon operations, autonomous systems, robotics, customer workflows, and AI-first transformation.</p>
+      <p>What I bring is the ability to build from ambiguity, speak across technical and business teams, turn emerging technology into a clear market story, create the operating mechanisms behind it, and lead the adoption work that makes value measurable.</p>
+      <p class="close">For a practice being shaped from a blank whiteboard, I believe strategy is stronger when the person drawing the map has also navigated rough water.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section white">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker">The conversation I would bring</div>
+      <h2>Four questions worth pressure-testing together.</h2>
+    </div>
+    <div class="questions-grid stagger">
+      <div class="question"><p>Where does Coastal most want to differentiate its AI practice beyond the Salesforce ecosystem without weakening the advantage it already has there?</p></div>
+      <div class="question"><p>Which client problem is appearing often enough in pipeline that it deserves to become a repeatable Coastal AI offer?</p></div>
+      <div class="question"><p>What would have to be true one year from now for leadership to say the AI practice materially changed Coastal's market position and commercial growth?</p></div>
+      <div class="question"><p>Where does this VP need to challenge the company most: point of view, packaging, partner strategy, sales enablement, delivery rigor, or internal adoption?</p></div>
+    </div>
+
+    <div class="cta reveal">
+      <div><h3>Russell Dudek</h3><p>AI practice builder • Agentic operations • Enterprise transformation • Executive translator</p></div>
+      <div>
+        <div class="actions">
+          <a class="btn primary" href="mailto:russelldudek@gmail.com?subject=Coastal%20VP%20of%20AI%20Conversation">Start a conversation</a>
+          <a class="btn" href="https://www.linkedin.com/in/russelldudek" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+        <div class="docs">
+          <a class="doc-btn" href="resume.html">Resume</a>
+          <a class="doc-btn" href="cover-letter.html">Cover Letter</a>
+          <a class="doc-btn" href="https://scholar.google.com/scholar?q=%22Russell%20Dudek%22" target="_blank" rel="noopener">Scholar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <details>
+      <summary>Research basis, competitive signals and source notes</summary>
+      <div class="sources">
+        <ol>
+          <li><a href="https://recruitingbypaycor.com/career/JobIntroduction.action?clientId=8a7883c69b1375e0019bb78d357f7b9e&id=8a7885ac9efb8722019f438c86b608eb" target="_blank" rel="noopener">Coastal VP of Artificial Intelligence role</a></li>
+          <li><a href="https://coastalcloud.us/" target="_blank" rel="noopener">Coastal corporate site</a> — positioning, customer proof, services, delivery model, and business impact.</li>
+          <li><a href="https://coastalcloud.us/about/" target="_blank" rel="noopener">About Coastal</a> — values, methodology, TCS backing, project scale, and delivery approach.</li>
+          <li><a href="https://coastalcloud.us/resources/ai-operations-report-2026/" target="_blank" rel="noopener">The AI Operations Report 2026</a> — research across 800 organizations, expectations, adoption, data, bandwidth, and dedicated AI team signals.</li>
+          <li><a href="https://coastalcloud.us/service/waves-for-agentic-ops/" target="_blank" rel="noopener">Waves for Agentic Ops</a> — managed agent operations, monitoring, governance, cost control, adoption, and post-launch value.</li>
+          <li><a href="https://coastalcloud.us/service/agentforce/" target="_blank" rel="noopener">Coastal Agentforce services</a> — Agentforce positioning, end-to-end services, and pilot pathways.</li>
+          <li><a href="https://coastalcloud.us/resources/hello-from-coastal/" target="_blank" rel="noopener">Hello from Coastal</a> — brand evolution, maritime signal-flag design inspiration, guidance, and collaboration.</li>
+          <li><a href="https://www.reuters.com/business/openai-deepens-partnerships-with-consulting-giants-push-enterprise-ai-beyond-2026-02-23/" target="_blank" rel="noopener">Reuters: OpenAI consulting alliances</a> — enterprise deployment and consulting-ecosystem context.</li>
+          <li><a href="https://www.wsj.com/cio-journal/anthropic-bulks-up-its-enterprise-partner-program-amid-ipo-plans-560a9b82" target="_blank" rel="noopener">WSJ: Anthropic enterprise partner ecosystem</a> — partner-network context.</li>
+          <li><a href="https://www.businessinsider.com/ai-consulting-mckinsey-pwc-deloitte-bcg-kpmg-accenture-ey-ibm-2026-5" target="_blank" rel="noopener">Business Insider: AI and consulting delivery models</a> — market shift toward embedded engineering and AI delivery.</li>
+        </ol>
+        <p class="note">Prepared from public Coastal materials, the supplied role description, current market reporting, and Russell Dudek's documented experience. Proposed service architecture, team design, and GTM ideas are candidate hypotheses—not claims about Coastal confidential strategy, client pipeline, partner agreements, or internal plans. The signal-flag-inspired visual treatment is an original candidate-site interpretation informed by Coastal's public explanation of its maritime signal-flag brand inspiration.</p>
+      </div>
+    </details>
+  </div>
+</footer>
+
+<section id="printBrief">
+  <div class="print-page">
+    <div class="print-brand"><span class="flag-mark"></span><strong>Coastal AI Practice Candidate Brief</strong></div>
+    <h1>Turn Coastal's AI strengths into a market signal.</h1>
+    <p class="print-accent"><strong>Thesis:</strong> Coastal already has trust, delivery proof, Agentforce credibility, AI Operations research, and TCS-backed scale. Connect those strengths into one model-diverse practice that helps enterprises choose well, put AI to work, and keep it creating value.</p>
+    <div class="print-grid2">
+      <div class="print-box"><div class="print-stat">8,001</div><h3>Projects delivered</h3><p>Trust and delivery evidence already exist.</p></div>
+      <div class="print-box"><div class="print-stat">800</div><h3>Organizations studied</h3><p>Proprietary research can become GTM leverage.</p></div>
+      <div class="print-box"><div class="print-stat">46%</div><h3>Expectations gap</h3><p>Clients need operating help, not just demos.</p></div>
+      <div class="print-box"><div class="print-stat">73%</div><h3>Adoption walls</h3><p>Change and enablement belong inside the offer.</p></div>
+    </div>
+    <h2>Three jobs inside the role</h2>
+    <p><strong>Market:</strong> define Coastal's point of view and services portfolio.</p>
+    <p><strong>Delivery:</strong> make excellent AI implementation repeatable and governed.</p>
+    <p><strong>Institution:</strong> raise the firm's collective AI fluency across sales, marketing, delivery, alliances, and internal operations.</p>
+  </div>
+  <div class="print-page">
+    <div class="print-brand"><span class="flag-mark"></span><strong>Practice Architecture</strong></div>
+    <h2>Four offers. One client journey.</h2>
+    <div class="print-grid2">
+      <div class="print-box"><h3>1. AI True North</h3><p>Prioritize by value, feasibility, data readiness, risk, adoption burden, partner fit, and time-to-proof.</p></div>
+      <div class="print-box"><h3>2. Build & Integrate</h3><p>Salesforce-native and model-diverse delivery with evaluation, controls, integration, cost visibility, and ownership.</p></div>
+      <div class="print-box"><h3>3. Adopt & Rewire</h3><p>Role redesign, training, manager enablement, champions, telemetry, and product learning.</p></div>
+      <div class="print-box"><h3>4. Run & Optimize</h3><p>Managed AI operations across behavior, quality, cost, governance, data, adoption, and value.</p></div>
+    </div>
+    <h2>Partner principle</h2>
+    <p class="print-accent">Partner deeply. Stay client-first. Choose by workflow, data context, architecture, governance, economics, and value—not logo loyalty.</p>
+  </div>
+  <div class="print-page">
+    <div class="print-brand"><span class="flag-mark"></span><strong>Why Russell Dudek</strong></div>
+    <h2>AI strategy with operating scar tissue.</h2>
+    <div class="print-grid2">
+      <div class="print-box"><h3>Practice builder</h3><p>AI readiness frameworks, advisory concepts, agentic workflows, product ideas, and operating models built from low-structure beginnings.</p></div>
+      <div class="print-box"><h3>Technical depth</h3><p>Advanced electronics, robotics, machine vision, autonomous systems, AI workflows, RAG, Python, TensorFlow, and enterprise software.</p></div>
+      <div class="print-box"><h3>Executive translation</h3><p>Published technical work, talks, consortium participation, strategic customers, AI advisory, and cross-functional leadership.</p></div>
+      <div class="print-box"><h3>Operating credibility</h3><p>Amazon scale, high-reliability manufacturing, regulated autonomous systems, field robotics, and rapid change.</p></div>
+    </div>
+    <h2>Honest objection audit</h2>
+    <p class="print-accent">“Russ has the operating depth—but is he a career AI consulting practice leader?”</p>
+    <p>No. The case is different: build from ambiguity, speak across technical and business teams, turn emerging technology into a clear market story, create the operating mechanisms behind it, and make adoption measurable.</p>
+  </div>
+  <div class="print-page">
+    <div class="print-brand"><span class="flag-mark"></span><strong>First 180 Days</strong></div>
+    <h2>Listen hard. Choose a position. Package the offers. Co-sell. Prove.</h2>
+    <div class="print-grid2">
+      <div class="print-box"><h3>Days 0–45: Read the currents</h3><p>Listening tour, pipeline analysis, offer inventory, internal tooling, partner leverage, and client beachheads.</p></div>
+      <div class="print-box"><h3>Days 46–100: Raise the signal</h3><p>Point of view, services architecture, discovery workshop, evaluation standards, and internal enablement.</p></div>
+      <div class="print-box"><h3>Days 101–180: Win and compound</h3><p>Priority pursuits, first senior AI hires, partner GTM plays, customer proof, and quarterly practice review.</p></div>
+      <div class="print-box"><h3>Conversation</h3><p>Russell Dudek<br>Pittsburgh, PA<br>russelldudek@gmail.com<br>linkedin.com/in/russelldudek</p></div>
+    </div>
+    <h2>Questions to pressure-test</h2>
+    <p>Where should Coastal differentiate beyond Salesforce without weakening that advantage?</p>
+    <p>Which recurring client problem deserves to become a repeatable AI offer?</p>
+    <p>What would prove the practice materially changed Coastal's market position one year from now?</p>
+  </div>
+</section>
+
 <script>
-(async()=>{
-  const files=Array.from({length:8},(_,i)=>`site.parts/part-${String(i+1).padStart(3,'0')}.txt`);
-  const status=document.getElementById('status');
-  const timeout=(ms)=>new Promise((_,reject)=>setTimeout(()=>reject(new Error('Loading timed out. Please refresh.')),ms));
-  const loadPromise=(async()=>{
-    let complete=0;
-    const chunks=await Promise.all(files.map(async(file)=>{
-      const response=await fetch(`${file}?v=3`,{cache:'no-store'});
-      if(!response.ok) throw new Error(`${file} returned ${response.status}`);
-      const text=(await response.text()).replace(/\s+/g,'');
-      complete+=1;
-      status.textContent=`Loading ${complete} of ${files.length}`;
-      return text;
-    }));
-    const encoded=chunks.join('');
-    if(!encoded) throw new Error('The candidate vision payload was empty.');
-    const binary=atob(encoded);
-    const bytes=new Uint8Array(binary.length);
-    for(let i=0;i<binary.length;i++) bytes[i]=binary.charCodeAt(i);
-    let page=new TextDecoder('utf-8').decode(bytes);
-    if(!/<html[\s>]/i.test(page)) throw new Error('The candidate vision payload did not decode correctly.');
-    if(!/<base\s/i.test(page)) page=page.replace(/<head>/i,'<head><base href="/coastal/">');
-    document.open('text/html','replace');
-    document.write(page);
-    document.close();
-  })();
-  await Promise.race([loadPromise,timeout(20000)]);
-})().catch(error=>{
-  const loader=document.getElementById('loader');
-  loader.innerHTML='<div class="flag"></div><strong>Unable to load the candidate vision</strong><p>'+error.message+'</p><p><a href="resume.html">Open the résumé</a> · <a href="cover-letter.html">Open the cover letter</a></p>';
+const tabs=document.querySelectorAll('.tab');
+const panels=document.querySelectorAll('.panel article');
+tabs.forEach(tab=>{
+  tab.addEventListener('click',()=>{
+    tabs.forEach(t=>t.classList.remove('active'));
+    panels.forEach(p=>p.classList.remove('active'));
+    tab.classList.add('active');
+    const target=document.getElementById(tab.dataset.target);
+    if(target) target.classList.add('active');
+  });
 });
+
+const observed=document.querySelectorAll('.reveal,.stagger');
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+      io.unobserve(entry.target);
+    }
+  });
+},{threshold:.1});
+observed.forEach(el=>io.observe(el));
+
+const progress=document.getElementById('progress');
+window.addEventListener('scroll',()=>{
+  const max=document.documentElement.scrollHeight-window.innerHeight;
+  progress.style.width=(max>0?(window.scrollY/max)*100:0)+'%';
+},{passive:true});
+
+const spot=document.getElementById('spotlight');
+window.addEventListener('pointermove',e=>{
+  spot.style.left=e.clientX+'px';spot.style.top=e.clientY+'px';
+},{passive:true});
 </script>
 </body>
 </html>
