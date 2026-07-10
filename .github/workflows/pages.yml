@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -20,8 +20,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      - name: Inject site refinements
+      - name: Persist page refinements into branch source
         run: |
           python - <<'PY'
           from pathlib import Path
@@ -39,6 +41,18 @@ jobs:
                   text = text.replace("</head>", marker + "\n</head>")
                   path.write_text(text, encoding="utf-8")
           PY
+
+      - name: Commit source links when needed
+        run: |
+          if git diff --quiet; then
+            echo "No source link changes needed."
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add index.html resume.html
+            git commit -m "Persist Coastal site refinements in branch source"
+            git push origin HEAD:main
+          fi
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
