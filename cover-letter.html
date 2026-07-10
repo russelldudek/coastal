@@ -8,7 +8,7 @@
 header{position:sticky;top:0;z-index:5;background:rgba(248,243,234,.94);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
 .nav{max-width:980px;margin:auto;padding:15px 22px;display:flex;align-items:center;justify-content:space-between;gap:14px}
 .brand{font-weight:950;text-decoration:none;color:var(--navy)}.actions{display:flex;gap:8px;flex-wrap:wrap}
-.actions a{text-decoration:none;border:1px solid var(--navy);padding:8px 11px;background:#fff;color:var(--navy);font-size:.82rem;font-weight:900}
+.actions a{text-decoration:none;border:1px solid var(--navy);padding:8px 11px;background:#fff;color:var(--navy);font-size:.82rem;font-weight:900;transition:.2s ease}.actions a:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(6,44,73,.12)}.actions .print-action{background:var(--navy);color:#fff}
 main{max-width:940px;margin:34px auto 70px;background:#fff;border:1px solid var(--line);box-shadow:0 24px 70px rgba(6,44,73,.12);padding:46px}
 .note{background:var(--foam);border-left:5px solid var(--teal);padding:14px 16px;margin-bottom:24px}
 .note a{color:var(--navy);font-weight:900}
@@ -21,9 +21,16 @@ main{max-width:940px;margin:34px auto 70px;background:#fff;border:1px solid var(
 .cap{background:#fff;padding:12px;font-size:.86rem}.cap:nth-child(odd){background:var(--foam)}
 footer{max-width:940px;margin:0 auto 40px;color:var(--muted);font-size:.82rem;padding:0 22px}
 @media(max-width:720px){main{margin:14px 12px 48px;padding:26px 21px}.nav{flex-direction:column;align-items:flex-start}.caps{grid-template-columns:1fr}}
-@media print{header,footer{display:none}body{background:#fff}main{box-shadow:none;border:0;margin:0;padding:0;max-width:none}}
+@page{size:letter;margin:.48in}
+@media print{
+header,footer,.note{display:none!important}
+body{background:#fff!important;font-size:9.3pt;line-height:1.26}
+main{box-shadow:none;border:0;margin:0;padding:0;max-width:none}
+.name{font-size:20pt;margin:0 0 2px}.role{font-size:9pt;margin:0 0 4px}
+.body{margin:0 0 6px}
+}
 </style></head><body>
-<header><div class="nav"><a class="brand" href="./">← Coastal AI Practice Vision</a><div class="actions"><a href="https://www.linkedin.com/in/russelldudek" target="_blank">LinkedIn</a><a href="mailto:russelldudek@gmail.com">Email</a><a href="javascript:window.print()">Print</a></div></div></header>
+<header><div class="nav"><a class="brand" href="./">← Coastal AI Practice Vision</a><div class="actions"><a href="./">Candidate Vision</a><a href="resume.html">Resume</a><a href="https://www.linkedin.com/in/russelldudek" target="_blank" rel="noopener">LinkedIn</a><a href="mailto:russelldudek@gmail.com">Email</a><a class="print-action" href="#" onclick="window.print();return false;">Print Cover Letter</a></div></div></header>
 <main><div class="note"><strong>Cover letter — Vice President, Artificial Intelligence</strong><br>Candidate vision: <a href="https://russelldudek.github.io/coastal/">https://russelldudek.github.io/coastal/</a></div><h1 class='name'>RUSSELL DUDEK</h1>
 <p class='role'>AI PRACTICE BUILDER | ENTERPRISE AI STRATEGY | AGENTIC OPERATIONS | CLIENT ADVISORY</p>
 <p class='body'>Pittsburgh, PA | 412.287.8640 | russelldudek@gmail.com | LinkedIn | Candidate Vision</p>
@@ -32,6 +39,6 @@ footer{max-width:940px;margin:0 auto 40px;color:var(--muted);font-size:.82rem;pa
 <p class='body'>I have spent more than twenty years turning complex technology into practical outcomes across advanced electronics, Amazon operations, autonomous systems, robotics, machine vision, customer workflows, and AI-first transformation. Through DudeWorth, Core, and DudexOS, I have also built AI readiness frameworks, agentic workflow patterns, advisory models, and operating concepts around LLMs, retrieval, human judgment, evaluation, governance, and adoption. The common thread is building from ambiguity, translating across technical and business teams, and making new technology useful enough to survive real work.</p>
 <p class='body'>I see three jobs inside Coastal&#x27;s VP of AI role. First, define the market signal: a clear point of view and services portfolio across Salesforce AI, OpenAI, Anthropic, and the wider data ecosystem. Second, build the delivery system: implementation standards, evaluation, governance, reusable methods, and a small high-performing engineering team. Third, make the company smarter about AI: equip sales, marketing, delivery, alliances, and internal operations with language, tools, and confidence they can use. Those three jobs should reinforce one another.</p>
 <p class='body'>Coastal&#x27;s timing is compelling. The firm already has customer trust, Agentforce credibility, proprietary AI Operations research, Waves for Agentic Ops, data and AI services, and TCS-backed scale. At the same time, Coastal&#x27;s own research shows that investment and confidence remain high while results lag, adoption walls persist, and data and bandwidth constrain value. My thesis is that Coastal can own the space between AI strategy and reliable operation: help clients choose well, build wisely, drive adoption, and keep AI creating value after launch.</p>
-<p class='body'>I created a short Coastal-specific candidate vision to make the thinking concrete:<br><br><a href="https://russelldudek.github.io/coastal/">https://russelldudek.github.io/coastal/</a><br><br>I would welcome the opportunity to discuss how my combination of AI strategy, agentic systems thinking, technical depth, operations leadership, client translation, thought leadership, and builder mentality could help Coastal shape the next chapter of its AI business.<br><br>Carpe diem,<br><br>Russell Dudek</p></main>
+<p class='body'>I created a short Coastal-specific candidate vision to make the thinking concrete:<br><br>https://russelldudek.github.io/coastal/<br><br>I would welcome the opportunity to discuss how my combination of AI strategy, agentic systems thinking, technical depth, operations leadership, client translation, thought leadership, and builder mentality could help Coastal shape the next chapter of its AI business.<br><br>Carpe diem,<br><br>Russell Dudek</p></main>
 <footer>Russell Dudek • Pittsburgh, Pennsylvania • russelldudek@gmail.com</footer>
 </body></html>
