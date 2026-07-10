@@ -8,7 +8,7 @@
 header{position:sticky;top:0;z-index:5;background:rgba(248,243,234,.94);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
 .nav{max-width:980px;margin:auto;padding:15px 22px;display:flex;align-items:center;justify-content:space-between;gap:14px}
 .brand{font-weight:950;text-decoration:none;color:var(--navy)}.actions{display:flex;gap:8px;flex-wrap:wrap}
-.actions a{text-decoration:none;border:1px solid var(--navy);padding:8px 11px;background:#fff;color:var(--navy);font-size:.82rem;font-weight:900}
+.actions a{text-decoration:none;border:1px solid var(--navy);padding:8px 11px;background:#fff;color:var(--navy);font-size:.82rem;font-weight:900;transition:.2s ease}.actions a:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(6,44,73,.12)}.actions .print-action{background:var(--navy);color:#fff}
 main{max-width:940px;margin:34px auto 70px;background:#fff;border:1px solid var(--line);box-shadow:0 24px 70px rgba(6,44,73,.12);padding:46px}
 .note{background:var(--foam);border-left:5px solid var(--teal);padding:14px 16px;margin-bottom:24px}
 .note a{color:var(--navy);font-weight:900}
@@ -21,9 +21,19 @@ main{max-width:940px;margin:34px auto 70px;background:#fff;border:1px solid var(
 .cap{background:#fff;padding:12px;font-size:.86rem}.cap:nth-child(odd){background:var(--foam)}
 footer{max-width:940px;margin:0 auto 40px;color:var(--muted);font-size:.82rem;padding:0 22px}
 @media(max-width:720px){main{margin:14px 12px 48px;padding:26px 21px}.nav{flex-direction:column;align-items:flex-start}.caps{grid-template-columns:1fr}}
-@media print{header,footer{display:none}body{background:#fff}main{box-shadow:none;border:0;margin:0;padding:0;max-width:none}}
+@page{size:letter;margin:.38in}
+@media print{
+header,footer,.note{display:none!important}
+body{background:#fff!important;font-size:8.15pt;line-height:1.19}
+main{box-shadow:none;border:0;margin:0;padding:0;max-width:none}
+.name{font-size:18.5pt;margin:0 0 2px}.role{font-size:8.7pt;margin:0 0 3px}
+.section{font-size:9.4pt;margin:7px 0 3px;padding-bottom:2px;border-bottom-width:2px}
+.body{margin:0 0 2px}.bullet{margin:0 0 1px;padding-left:8px;border-left-width:2px}
+.caps{margin:5px 0 8px}.cap{font-size:7.5pt;padding:6px}
+.page2{break-before:page;page-break-before:always;margin-top:0}
+}
 </style></head><body>
-<header><div class="nav"><a class="brand" href="./">← Coastal AI Practice Vision</a><div class="actions"><a href="https://www.linkedin.com/in/russelldudek" target="_blank">LinkedIn</a><a href="mailto:russelldudek@gmail.com">Email</a><a href="javascript:window.print()">Print</a></div></div></header>
+<header><div class="nav"><a class="brand" href="./">← Coastal AI Practice Vision</a><div class="actions"><a href="./">Candidate Vision</a><a href="cover-letter.html">Cover Letter</a><a href="https://www.linkedin.com/in/russelldudek" target="_blank" rel="noopener">LinkedIn</a><a href="mailto:russelldudek@gmail.com">Email</a><a class="print-action" href="#" onclick="window.print();return false;">Print Resume</a></div></div></header>
 <main><div class="note"><strong>Role-aligned resume — Vice President, Artificial Intelligence</strong><br>Candidate vision: <a href="https://russelldudek.github.io/coastal/">https://russelldudek.github.io/coastal/</a></div><h1 class='name'>RUSSELL DUDEK</h1>
 <p class='role'>AI PRACTICE BUILDER  |  ENTERPRISE AI STRATEGY  |  AGENTIC OPERATIONS  |  CLIENT ADVISORY</p>
 <p class='body'>Pittsburgh, PA | 412.287.8640 | russelldudek@gmail.com | LinkedIn | Coastal Candidate Vision</p>
@@ -36,7 +46,6 @@ Governance, human oversight, acceptance criteria, observability, adoption, and v
 Translate AI into practical language and playbooks for sales, marketing, delivery, and operations.</div><div class='cap'>Team Leadership
 Hire, coach, organize, and align technical talent around clear outcomes and reusable methods.</div></div>
 <p class='body'>AI-first operations and technology leader with 20+ years turning emerging technology into clear business value, repeatable operating systems, and adopted workflows. Experience spans AI advisory, agentic workflow design, robotics, machine vision, autonomous systems, enterprise operations, advanced electronics, customer-facing technical programs, thought leadership, and team leadership. Strongest at the seam between market story and delivery reality: shaping offers, translating architecture into executive language, establishing governance and evaluation, enabling client-facing teams, and building from ambiguity.</p>
-<h2 class='section'>COASTAL ROLE FIT</h2>
 <h2 class='section'>PROFESSIONAL EXPERIENCE</h2>
 <p class='body'>Director of Operations | Vape-Jet    2025 - Present</p>
 <p class='body'>Lead AI-first operating transformation for a software-enabled robotics and machine-vision business.</p>
@@ -56,7 +65,7 @@ Hire, coach, organize, and align technical talent around clear outcomes and reus
 <p class='bullet'>• Built operating rhythms, leadership routines, performance visibility, escalation paths, and standard work supporting approximately five million second-day orders annually.</p>
 <p class='bullet'>• Led improvements across labor planning, throughput, safety, quality, customer experience, and team engagement using Lean and Gemba methods.</p>
 <p class='bullet'>• Advanced logistics innovation through Prime Air research and Amazon Flex geolocation concepts, translating new technology into customer and operating value.</p>
-<h2 class='section'>EARLIER LEADERSHIP &amp; TECHNICAL FOUNDATION</h2>
+<h2 class='section page2'>EARLIER LEADERSHIP &amp; TECHNICAL FOUNDATION</h2>
 <p class='body'>Director of Operations &amp; Engineering Management | Compunetics    2000 - 2013</p>
 <p class='body'>Led advanced electronics, engineering, manufacturing, quality systems, technical programs, and strategic customer work.</p>
 <p class='bullet'>• Progressed through R&amp;D Program Manager, Production Manager, Strategic Acquisition Manager, Operations Manager, and director-level leadership responsibilities.</p>
@@ -73,6 +82,13 @@ Hire, coach, organize, and align technical talent around clear outcomes and reus
 <p class='bullet'>• Created operating cadence, customer follow-up, sales coordination, fulfillment support, and performance visibility for a distributed regional model.</p>
 <p class='bullet'>• Advanced AI-enhanced transportation management and route-planning concepts to improve logistics visibility and service execution.</p>
 <p class='bullet'>• Led CRM, digital marketing, SEO, and online buying initiatives, balancing customer experience, adoption, and commercial outcomes.</p>
+<h2 class='section'>SELECTED AI PRACTICE &amp; THOUGHT LEADERSHIP</h2>
+<p class='bullet'>• Built AI readiness and transformation frameworks that turn broad executive interest into scored opportunity portfolios, sequencing logic, governance questions, adoption plans, and measurable next steps.</p>
+<p class='bullet'>• Designed agentic operating concepts that combine structured context, retrieval, tool use, human judgment, decision records, feedback loops, and escalation boundaries rather than treating the model as the whole product.</p>
+<p class='bullet'>• Developed SaaS and advisory concepts for AI-enabled project roadmapping, operational decision support, accounts-receivable recovery, emergency communication, and industry-specific workflow platforms.</p>
+<p class='bullet'>• Applied OpenAI, AWS Bedrock, SageMaker, TensorFlow, RAG patterns, automation, and enterprise workflow design across advisory, product, and operating contexts.</p>
+<p class='bullet'>• Created and presented points of view for executives, engineers, operators, customers, and industry audiences; experience includes published technical articles, industry talks, and consortium participation.</p>
+<p class='bullet'>• Repeatedly translated emerging technology into customer-facing narratives, internal playbooks, operating cadences, and implementation logic that technical and non-technical teams could use together.</p>
 <h2 class='section'>LEADERSHIP EVIDENCE</h2>
 <p class='bullet'>• Builder mindset: repeatedly created new operations, workflows, teams, systems, and technology-enabled practices from low-structure starting points.</p>
 <p class='bullet'>• Executive translation: experience briefing leaders, customers, technical teams, and operators across science, engineering, AI, quality, logistics, and business outcomes.</p>
