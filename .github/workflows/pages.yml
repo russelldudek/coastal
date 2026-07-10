@@ -23,23 +23,30 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Persist page refinements into branch source
+      - name: Persist versioned page refinements into branch source
         run: |
           python - <<'PY'
           from pathlib import Path
 
           targets = {
-              "index.html": "site-enhancements.css",
-              "resume.html": "resume-print.css",
+              "index.html": ("site-enhancements.css", "20260710-3"),
+              "resume.html": ("resume-print.css", "20260710-3"),
           }
 
-          for html_name, css_name in targets.items():
+          for html_name, (css_name, version) in targets.items():
               path = Path(html_name)
               text = path.read_text(encoding="utf-8")
-              marker = f'<link rel="stylesheet" href="{css_name}">'
-              if marker not in text:
-                  text = text.replace("</head>", marker + "\n</head>")
-                  path.write_text(text, encoding="utf-8")
+              plain = f'<link rel="stylesheet" href="{css_name}">'
+              versioned = f'<link rel="stylesheet" href="{css_name}?v={version}">'
+
+              # Replace an existing unversioned link or any prior version.
+              import re
+              pattern = rf'<link rel="stylesheet" href="{re.escape(css_name)}(?:\?v=[^"]+)?">'
+              if re.search(pattern, text):
+                  text = re.sub(pattern, versioned, text)
+              else:
+                  text = text.replace("</head>", versioned + "\n</head>")
+              path.write_text(text, encoding="utf-8")
           PY
 
       - name: Commit source links when needed
@@ -50,7 +57,7 @@ jobs:
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add index.html resume.html
-            git commit -m "Persist Coastal site refinements in branch source"
+            git commit -m "Version Coastal refinement assets for Pages cache refresh"
             git push origin HEAD:main
           fi
 
